@@ -1,0 +1,17 @@
+[user]
+	email = tobinyehle@gmail.com
+	name = Tobin Yehle
+[core]
+	editor = vim
+[alias]
+    ci = commit
+    st = status
+    la = log --graph -n 10 --decorate --date=short --format='%C(auto)%h%Creset %C(magenta bold)%ad%Creset %C(green)%an%Creset%C(auto)%d %s'
+    lal = log --graph -n 20 --all --date-order --decorate --date=short --format='%C(auto)%h%Creset %C(magenta bold)%ad%Creset %C(green)%an%Creset%C(auto)%d %s'
+    co = checkout
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+[pull]
+	rebase = true

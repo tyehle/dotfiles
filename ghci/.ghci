@@ -1,0 +1,20 @@
+:set +m
+:set +t
+
+let promptFunction, promptContFunction :: [String] -> Int -> IO String
+    (promptFunction, promptContFunction) =
+      let
+        minLineWidth = 3
+        lineStyle = "\ESC[33m\STX"
+        lamStyle = "\ESC[1;34m\STX"
+        reset = "\ESC[0m\STX"
+        lineSpace n = replicate (max minLineWidth (length (show n))) ' '
+        linePadded n = replicate (max 0 (minLineWidth - length (show n))) ' ' ++ show n
+        prompt line lam = return $ lineStyle ++ line ++ lamStyle ++ lam ++ reset
+        pf modules lineNum = prompt (linePadded lineNum) " λ "
+        pcf modules lineNum = prompt (lineSpace lineNum) " | "
+      in (pf, pcf)
+
+:set prompt-function promptFunction
+:set prompt-cont-function promptContFunction
+

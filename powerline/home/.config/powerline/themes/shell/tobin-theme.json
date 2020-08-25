@@ -1,0 +1,94 @@
+{
+    "segment_data": {
+        "hostname": {
+            "args": {
+                "only_if_ssh": false
+            }
+        },
+        "cwd": {
+            "args": {
+                "dir_limit_depth": 0,
+                "use_path_separator": true
+            }
+        },
+
+        "gitstatus": {
+            "args": {
+                "show_tag": "exact",
+                "formats": {
+                    "branch": "\ue0a0 {}",
+                    "tag": " ★ {}",
+                    "behind": " ↓ {}",
+                    "ahead": " ↑ {}",
+                    "staged": " ● {}",
+                    "unmerged": " ✖ {}",
+                    "changed": " ✚ {}",
+                    "untracked": " … {}",
+                    "stashed": " ⚑ {}"
+                }
+            }
+        },
+
+        "exit_status": {
+            "args": {
+                "success_contents": "⥼",
+                "fail_contents": "{}"
+            }
+        },
+
+        "powerline.segments.common.net.hostname": {
+            "before": ""
+        },
+
+        "powerline.segments.common.env.virtualenv": {
+            "before": ""
+        }
+    },
+
+    "dividers": {
+        "left": {
+            "soft": "",
+            "hard": " "
+        }
+    },
+
+    "segments": {
+        "left": [
+            {
+                "function": "powerline.segments.common.env.user",
+                "priority": 30
+            },
+            {
+                "function": "powerline.segments.common.net.hostname",
+                "priority": 10
+            },
+            {
+                "function": "powerline.segments.shell.cwd",
+                "priority": 10
+            },
+            {
+                "function": "powerline_gitstatus.gitstatus",
+                "priority": 40
+            },
+            {
+                "function": "powerline.segments.common.env.virtualenv",
+                "priority": 50
+            },
+            {
+                "function": "powerline.segments.shell.jobnum",
+                "priority": 20
+            },
+            {
+                "function": "powerline_exitstatus.exit_status",
+                "priority": 10
+            },
+            {
+                "display": false,
+                "type": "string",
+                "highlight_groups": ["symbol"],
+                "contents": "⥼",
+                "priority": null
+            }
+        ]
+    }
+}

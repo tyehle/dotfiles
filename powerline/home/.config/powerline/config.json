@@ -1,0 +1,12 @@
+{
+    "common": {
+        "default_top_theme": "powerline_terminus"
+    },
+
+    "ext": {
+        "shell": {
+            "colorscheme": "azure-rose",
+            "theme": "tobin-theme"
+        }
+    }
+}

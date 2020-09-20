@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-base_dir=$(dirname "$(readlink -f "$0")")
+base_dir=$(dirname "$(realpath "$0")")
 
 shopt -s nullglob
 shopt -s dotglob

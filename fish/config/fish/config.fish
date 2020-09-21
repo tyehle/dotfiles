@@ -10,6 +10,8 @@ set -g fish_prompt_pwd_dir_length 0
 status --is-interactive; and rbenv init - | source
 
 # setup pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -Ux fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 pyenv init - | source
 
 # setup powerline

@@ -1,19 +1,36 @@
 [user]
 	email = tobinyehle@gmail.com
 	name = Tobin Yehle
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBHknVDfc8LuqLOgHFamAVHOMfLjhM1Igcem5f3DG833
+
 [core]
 	editor = vim
+
 [alias]
     ci = commit
     st = status
     la = log --graph -n 10 --decorate --date=short --format='%C(auto)%h%Creset %C(magenta bold)%ad%Creset %C(green)%an%Creset%C(auto)%d %s'
     lal = log --graph -n 20 --all --date-order --decorate --date=short --format='%C(auto)%h%Creset %C(magenta bold)%ad%Creset %C(green)%an%Creset%C(auto)%d %s'
     co = checkout
+
 [branch]
 	autosetuprebase = always
+
 [push]
 	default = simple
+
 [pull]
 	rebase = true
+
 [init]
 	defaultBranch = main
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
